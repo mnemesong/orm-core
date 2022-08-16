@@ -3,10 +3,7 @@
 namespace Mnemesong\OrmCoreUnit\query;
 
 use Mnemesong\OrmCore\query\Query;
-use Mnemesong\Spex\specifications\comparing\ArrayComparingSpecification;
-use Mnemesong\Spex\specifications\comparing\ColumnsComparingSpecification;
 use Mnemesong\Spex\specifications\comparing\NumericValueComparingSpecification;
-use Mnemesong\Spex\specifications\composites\MultipleCompositeSpecification;
 use PHPUnit\Framework\TestCase;
 
 class QueryTest extends TestCase
