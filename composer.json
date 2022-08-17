@@ -4,9 +4,9 @@
     "type": "library",
     "require": {
         "php": ">=7.4",
-        "webmozart/assert": "*",
-        "mnemesong/spex": "*",
-        "mnemesong/structure": "*"
+        "webmozart/assert": "1.11.*",
+        "mnemesong/spex": "0.7.*",
+        "mnemesong/structure": "0.4.*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",

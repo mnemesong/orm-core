@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea3ba0c98d98298cd0997b4a9833cb11",
+    "content-hash": "c289bb63bcddf45b46012ff75917e1a3",
     "packages": [
         {
             "name": "mnemesong/spex",
-            "version": "0.6",
+            "version": "0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mnemesong/spex.git",
-                "reference": "6fb72187ef6fa2af619664335d1159c1afc05ba9"
+                "reference": "6e2e5aeecb08d55abbc9ad6d92a7f0d7a6f0e379"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnemesong/spex/zipball/6fb72187ef6fa2af619664335d1159c1afc05ba9",
-                "reference": "6fb72187ef6fa2af619664335d1159c1afc05ba9",
+                "url": "https://api.github.com/repos/mnemesong/spex/zipball/6e2e5aeecb08d55abbc9ad6d92a7f0d7a6f0e379",
+                "reference": "6e2e5aeecb08d55abbc9ad6d92a7f0d7a6f0e379",
                 "shasum": ""
             },
             "require": {
-                "mnemesong/structure": "0.3.*",
+                "mnemesong/structure": "0.4.*",
                 "php": ">=7.4",
                 "webmozart/assert": "1.11.*"
             },
@@ -52,22 +52,22 @@
             "description": "The package provides objects and an interface for express specifications.",
             "support": {
                 "issues": "https://github.com/mnemesong/spex/issues",
-                "source": "https://github.com/mnemesong/spex/tree/0.6"
+                "source": "https://github.com/mnemesong/spex/tree/0.7"
             },
-            "time": "2022-08-16T22:13:20+00:00"
+            "time": "2022-08-17T09:22:04+00:00"
         },
         {
             "name": "mnemesong/structure",
-            "version": "0.3.2",
+            "version": "0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mnemesong/structure.git",
-                "reference": "30df3059f9af5a008ca54615fa5b8ce1bba98472"
+                "reference": "13b79ce391b9cc0290925533887ca83d47af250c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnemesong/structure/zipball/30df3059f9af5a008ca54615fa5b8ce1bba98472",
-                "reference": "30df3059f9af5a008ca54615fa5b8ce1bba98472",
+                "url": "https://api.github.com/repos/mnemesong/structure/zipball/13b79ce391b9cc0290925533887ca83d47af250c",
+                "reference": "13b79ce391b9cc0290925533887ca83d47af250c",
                 "shasum": ""
             },
             "require": {
@@ -102,9 +102,9 @@
             "description": "A library for creating and working with objects that are dynamic associative arrays of scalar values.",
             "support": {
                 "issues": "https://github.com/mnemesong/structure/issues",
-                "source": "https://github.com/mnemesong/structure/tree/0.3.2"
+                "source": "https://github.com/mnemesong/structure/tree/0.4"
             },
-            "time": "2022-08-16T18:27:35+00:00"
+            "time": "2022-08-17T09:14:38+00:00"
         },
         {
             "name": "webmozart/assert",
