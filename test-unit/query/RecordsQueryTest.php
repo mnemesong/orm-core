@@ -47,6 +47,7 @@ class RecordsQueryTest extends TestCase
     {
         $q1 = self::getInitializedQuery();
         $this->expectException(\InvalidArgumentException::class);
+        /* @phpstan-ignore-next-line  */
         $q1->sortedBy([112, 'name']);
     }
 
@@ -54,6 +55,7 @@ class RecordsQueryTest extends TestCase
     {
         $q1 = self::getInitializedQuery();
         $this->expectException(\InvalidArgumentException::class);
+        /* @phpstan-ignore-next-line */
         $q1->sortedBy([['data'], 'name']);
     }
 
