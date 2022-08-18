@@ -15,10 +15,19 @@ trait AbleToSortTrait
      */
     public function sortedBy(array $fields): self
     {
-        Assert::allStringNotEmpty($fields, 'Fields list should be array of not empty strings');
         $clone = clone $this;
-        $clone->sortFields = $fields;
+        $clone->setSortFields($fields);
         return $clone;
+    }
+
+    /**
+     * @param array $fields
+     * @return void
+     */
+    protected function setSortFields(array $fields): void
+    {
+        Assert::allStringNotEmpty($fields, 'Fields list should be array of not empty strings');
+        $this->sortFields = $fields;
     }
 
     /**

@@ -24,13 +24,22 @@ trait LimitExecutableTrait
      */
     public function withLimit(int $limit): self
     {
+        $clone = clone $this;
+        $clone->setLimit($limit);
+        return $clone;
+    }
+
+    /**
+     * @param int $limit
+     * @return void
+     */
+    protected function setLimit(int $limit): void
+    {
         Assert::true(
             $limit >= 0,
             'Limit should be not less than 0. Zero limit means execution limits absence.'
         );
-        $clone = clone $this;
-        $clone->limit = $limit;
-        return $clone;
+        $this->limit = $limit;
     }
 
     /**
