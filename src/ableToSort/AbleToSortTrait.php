@@ -21,7 +21,7 @@ trait AbleToSortTrait
     }
 
     /**
-     * @param array $fields
+     * @param string[] $fields
      * @return void
      */
     protected function setSortFields(array $fields): void
