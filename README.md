@@ -70,6 +70,48 @@ the storages are in separate packages.</p>
 хранилища находятся в отдельных пакетах.</p>
 <hr>
 
+<h2>Queries / Запросы</h2>
+<h3>ENG</h3>
+<p>This package provides two types of requests:</p>
+<h4>1. RecordsQuery</h4>
+<p>Allows you to retrieve records from a table as objects of the Structure class (See mnemesong/structure package).</p>
+<h6>Methods</h6>
+<ul>
+    <li><code>sortedBy(string[] $fields): self</code>, <code>withoutSorting(): self</code> - Lets get
+        RecordQuery with specified sort fields and their priority.</li>
+    <li><code>where(SpecificationInterface $spec): self</code>, <code>andWhere(SpecificationInterface $spec): self</code>,
+        <code>orWhere(SpecificationInterface $spec): self</code>- Allows you to get a RecordQuery with a specification
+        search.</li>
+    <li><code>withOnlyFields(string[] $fields): self</code>, <code>withAllFields(): self</code> - Allows you to get
+        RecordQuery indicating which fields to look for when searching.</li>
+    <li><code>withLimit(int $limit): self</code>, <code>withoutLimit(int $limit): self</code> - Allows you to get
+        RecordQuery specifying the record search limit. Useful when you need to get only the first, or several
+        first entries. Use sorting to operate the criteria for selecting the first records.</li>
+    <li><code>find(): StructureCollection</code> - Performs a search and returns the found results as an object
+        StructureCollection.</li>
+</ul>
+
+<h3>RUS</h3>
+<p>Данный пакет предоставляет два типа запросов:</p>
+<h4>1. RecordsQuery</h4>
+<p>Позволяет получать из таблицы записи в виде объектов класса Structure (См. пакет mnemesong/structure).</p>
+<h6>Методы</h6>
+<ul>
+    <li><code>sortedBy(string[] $fields): self</code>, <code>withoutSorting(): self</code> - Позволяют получить 
+        RecordQuery с указанными полями для сортировки и их приоритетом.</li>
+    <li><code>where(SpecificationInterface $spec): self</code>, <code>andWhere(SpecificationInterface $spec): self</code>,
+        <code>orWhere(SpecificationInterface $spec): self</code>- Позволяет получить RecordQuery со спецификацией
+        поиска.</li>
+    <li><code>withOnlyFields(string[] $fields): self</code>, <code>withAllFields(): self</code> - Позволяет получить 
+        RecordQuery с указанием какие поля искать при поиске.</li>
+    <li><code>withLimit(int $limit): self</code>, <code>withoutLimit(int $limit): self</code> - Позволяет получить
+        RecordQuery с указанием лимита поиска записей. Полезно когда надо получить только первую, или несколько
+        первых записей. Для опертирования признаков отбора первых записей используйте сортировку.</li>
+    <li><code>find(): StructureCollection</code> - Выполнгяет поиск и выдает найденные результаты в виде объекта
+        StructureCollection.</li>
+</ul>
+<hr>
+
 <h2>License / Лицензия</h2>
 - MIT
 <hr>
