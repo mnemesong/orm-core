@@ -4,20 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c289bb63bcddf45b46012ff75917e1a3",
+    "content-hash": "30020a39a9963a4b06550863c40f0e68",
     "packages": [
         {
-            "name": "mnemesong/spex",
-            "version": "0.7",
+            "name": "mnemesong/scalarex",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/mnemesong/spex.git",
-                "reference": "6e2e5aeecb08d55abbc9ad6d92a7f0d7a6f0e379"
+                "url": "https://github.com/mnemesong/scalarex.git",
+                "reference": "5debf3919e739dba9a9d1ba290177455d5c60f27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnemesong/spex/zipball/6e2e5aeecb08d55abbc9ad6d92a7f0d7a6f0e379",
-                "reference": "6e2e5aeecb08d55abbc9ad6d92a7f0d7a6f0e379",
+                "url": "https://api.github.com/repos/mnemesong/scalarex/zipball/5debf3919e739dba9a9d1ba290177455d5c60f27",
+                "reference": "5debf3919e739dba9a9d1ba290177455d5c60f27",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "*",
+                "phpstan/phpstan": "*",
+                "phpstan/phpstan-webmozart-assert": "*",
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mnemesong\\Scalarex\\": "src/",
+                    "Mnemesong\\ScalarexTestUnit\\": "test-unit/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pantagruel74",
+                    "email": "tostar74@mail.ru"
+                }
+            ],
+            "description": "Scalar specifications expressor",
+            "support": {
+                "issues": "https://github.com/mnemesong/scalarex/issues",
+                "source": "https://github.com/mnemesong/scalarex/tree/0.1.1"
+            },
+            "time": "2022-08-17T14:41:48+00:00"
+        },
+        {
+            "name": "mnemesong/spex",
+            "version": "0.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mnemesong/spex.git",
+                "reference": "bf9e34a5c604081805ecd9fc41b7954b1b36f7eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mnemesong/spex/zipball/bf9e34a5c604081805ecd9fc41b7954b1b36f7eb",
+                "reference": "bf9e34a5c604081805ecd9fc41b7954b1b36f7eb",
                 "shasum": ""
             },
             "require": {
@@ -52,22 +99,22 @@
             "description": "The package provides objects and an interface for express specifications.",
             "support": {
                 "issues": "https://github.com/mnemesong/spex/issues",
-                "source": "https://github.com/mnemesong/spex/tree/0.7"
+                "source": "https://github.com/mnemesong/spex/tree/0.7.2"
             },
-            "time": "2022-08-17T09:22:04+00:00"
+            "time": "2022-08-17T14:51:44+00:00"
         },
         {
             "name": "mnemesong/structure",
-            "version": "0.4",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mnemesong/structure.git",
-                "reference": "13b79ce391b9cc0290925533887ca83d47af250c"
+                "reference": "80cc597b03ee06a0a3dae364cd4b4ce5be68a096"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnemesong/structure/zipball/13b79ce391b9cc0290925533887ca83d47af250c",
-                "reference": "13b79ce391b9cc0290925533887ca83d47af250c",
+                "url": "https://api.github.com/repos/mnemesong/structure/zipball/80cc597b03ee06a0a3dae364cd4b4ce5be68a096",
+                "reference": "80cc597b03ee06a0a3dae364cd4b4ce5be68a096",
                 "shasum": ""
             },
             "require": {
@@ -102,9 +149,9 @@
             "description": "A library for creating and working with objects that are dynamic associative arrays of scalar values.",
             "support": {
                 "issues": "https://github.com/mnemesong/structure/issues",
-                "source": "https://github.com/mnemesong/structure/tree/0.4"
+                "source": "https://github.com/mnemesong/structure/tree/0.4.1"
             },
-            "time": "2022-08-17T09:14:38+00:00"
+            "time": "2022-08-17T15:25:16+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -238,16 +285,16 @@
         },
         {
             "name": "mnemesong/collection-generator",
-            "version": "0.5",
+            "version": "0.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mnemesong/collection-generator.git",
-                "reference": "3031ab64d1331da261c13df2ea5ce88d6a723043"
+                "reference": "f7f4b381e74c18f06c4fa58d6c9e7e9f5e37b95c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnemesong/collection-generator/zipball/3031ab64d1331da261c13df2ea5ce88d6a723043",
-                "reference": "3031ab64d1331da261c13df2ea5ce88d6a723043",
+                "url": "https://api.github.com/repos/mnemesong/collection-generator/zipball/f7f4b381e74c18f06c4fa58d6c9e7e9f5e37b95c",
+                "reference": "f7f4b381e74c18f06c4fa58d6c9e7e9f5e37b95c",
                 "shasum": ""
             },
             "require": {
@@ -267,8 +314,8 @@
             "autoload": {
                 "psr-4": {
                     "Mnemesong\\CollectionGenerator\\": "src/",
-                    "Mnemesong\\CollectionGeneratorTest\\": "test-unit/",
-                    "Mnemesong\\CollectionGeneratorStubs\\": "test-stubs/"
+                    "Mnemesong\\CollectionGeneratorStubs\\": "test-stubs/",
+                    "Mnemesong\\CollectionGeneratorTestUnit\\": "test-unit/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -284,9 +331,9 @@
             "description": "Strictly-typed collections generator tool",
             "support": {
                 "issues": "https://github.com/mnemesong/collection-generator/issues",
-                "source": "https://github.com/mnemesong/collection-generator/tree/0.5"
+                "source": "https://github.com/mnemesong/collection-generator/tree/0.5.1"
             },
-            "time": "2022-08-15T07:02:11+00:00"
+            "time": "2022-08-17T16:52:40+00:00"
         },
         {
             "name": "myclabs/deep-copy",

@@ -6,7 +6,8 @@
         "php": ">=7.4",
         "webmozart/assert": "1.11.*",
         "mnemesong/spex": "0.7.*",
-        "mnemesong/structure": "0.4.*"
+        "mnemesong/structure": "0.4.*",
+        "mnemesong/scalarex": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
@@ -19,13 +20,15 @@
     "autoload": {
         "psr-4": {
             "Mnemesong\\OrmCore\\": "src/",
-            "Mnemesong\\OrmCoreUnit\\": "test-unit/"
+            "Mnemesong\\OrmCoreUnit\\": "test-unit/",
+            "Mnemesong\\OrmCoreStubs\\": "stubs/"
         }
     },
     "scripts": {
         "test:unit": "phpunit test-unit",
         "lint:src": "phpstan analyse src --level 9",
-        "lint:unit": "phpstan analyse test-unit --level 5"
+        "lint:unit": "phpstan analyse test-unit --level 9",
+        "lint:stubs": "phpstan analyse stubs --level 9"
     },
     "authors": [
         {
