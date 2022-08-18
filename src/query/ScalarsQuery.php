@@ -32,7 +32,7 @@ class ScalarsQuery implements SpecifiedInterface
      * @param ScalarSpecification $scalar
      * @return $this
      */
-    public function withScalar(ScalarSpecification $scalar): self
+    public function withAddScalar(ScalarSpecification $scalar): self
     {
         $clone = clone $this;
         $clone->scalars[] = $scalar;

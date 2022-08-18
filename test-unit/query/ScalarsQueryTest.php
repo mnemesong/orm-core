@@ -36,11 +36,11 @@ class ScalarsQueryTest extends TestCase
         $q1 = $this->getQuery();
         $this->assertEquals([], $q1->getScalars());
 
-        $q2 = $q1->withScalar(Scalar::max('age'));
+        $q2 = $q1->withAddScalar(Scalar::max('age'));
         $this->assertEquals([Scalar::max('age')], $q2->getScalars());
         $this->assertEquals([], $q1->getScalars());
 
-        $q3 = $q2->withScalar(Scalar::count('name'));
+        $q3 = $q2->withAddScalar(Scalar::count('name'));
         $this->assertEquals([Scalar::max('age'), Scalar::count('name')], $q3->getScalars());
         $this->assertEquals([Scalar::max('age')], $q2->getScalars());
 
@@ -52,7 +52,7 @@ class ScalarsQueryTest extends TestCase
     public function testFind(): void
     {
         $q1 = $this->getQuery()
-            ->withScalar(Scalar::avg('date'))
+            ->withAddScalar(Scalar::avg('date'))
             ->where(Sp::ex('s=', 'date', '2022-01-03'));
         ScalarsSearchModelStub::clear();
         $res = $q1->find();
