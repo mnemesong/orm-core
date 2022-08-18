@@ -4,6 +4,8 @@ namespace Mnemesong\OrmCore\query;
 
 use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
 use Mnemesong\OrmCore\ableToSort\AbleToSortTrait;
+use Mnemesong\OrmCore\limitContains\LimitContainsInterface;
+use Mnemesong\OrmCore\limitContains\LimitContainsTrait;
 use Mnemesong\OrmCore\storages\RecordsSearchModelInterface;
 use Mnemesong\Spex\specified\SpecifiedInterface;
 use Mnemesong\Spex\specified\SpecifiedTrait;
@@ -11,10 +13,11 @@ use Mnemesong\Structure\collections\StructureCollection;
 use Mnemesong\Structure\Structure;
 use Webmozart\Assert\Assert;
 
-class RecordsQuery implements SpecifiedInterface, AbleToSortInterface
+class RecordsQuery implements SpecifiedInterface, AbleToSortInterface, LimitContainsInterface
 {
     use SpecifiedTrait;
     use AbleToSortTrait;
+    use LimitContainsTrait;
 
     /* @phpstan-ignore-next-line  */
     protected array $selectFields = [];
@@ -64,16 +67,8 @@ class RecordsQuery implements SpecifiedInterface, AbleToSortInterface
     /**
      * @return StructureCollection
      */
-    public function findAll(): StructureCollection
+    public function find(): StructureCollection
     {
-        return $this->searchModel->findAllRecords($this->selectFields, $this->sortFields, $this->specification);
-    }
-
-    /**
-     * @return Structure|null
-     */
-    public function findFirstOrNull(): ?Structure
-    {
-        return $this->searchModel->findFirstRecordOrNull($this->selectFields, $this->sortFields, $this->specification);
+        return $this->searchModel->findRecords($this->selectFields, $this->sortFields, $this->specification, $this->limit);
     }
 }

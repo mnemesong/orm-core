@@ -15,14 +15,14 @@ trait LimitContainsTestTrait
     /**
      * @return LimitContainsInterface
      */
-    abstract protected function initLimitContains(): LimitContainsInterface;
+    abstract protected function getInitializedLimitContains(): LimitContainsInterface;
 
     /**
      * @return void
      */
     public function testLimits(): void
     {
-        $obj1 = $this->initLimitContains();
+        $obj1 = $this->getInitializedLimitContains();
         $this->useTestCase()->assertEquals($obj1->getLimit(), 0);
 
         $obj2 = $obj1->withLimit(4);
@@ -39,7 +39,7 @@ trait LimitContainsTestTrait
      */
     public function testLimitsException1(): void
     {
-        $obj1 = $this->initLimitContains();
+        $obj1 = $this->getInitializedLimitContains();
         $this->expectException(\InvalidArgumentException::class);
         $obj2 = $obj1->withLimit(-1);
     }

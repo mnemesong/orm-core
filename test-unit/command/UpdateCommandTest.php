@@ -68,7 +68,7 @@ class UpdateCommandTest extends TestCase
     /**
      * @return LimitContainsInterface
      */
-    protected function initLimitContains(): LimitContainsInterface
+    protected function getInitializedLimitContains(): LimitContainsInterface
     {
         return $this->getUpdateCommand($this->getTestStructure());
     }

@@ -34,7 +34,7 @@ class DeleteCommandTest extends TestCase
         return $this;
     }
 
-    protected function initLimitContains(): LimitContainsInterface
+    protected function getInitializedLimitContains(): LimitContainsInterface
     {
         return $this->getDeleteCommand();
     }

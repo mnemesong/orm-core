@@ -16,7 +16,7 @@ class LimitContainsTest extends TestCase
         return $this;
     }
 
-    protected function initLimitContains(): LimitContainsInterface
+    protected function getInitializedLimitContains(): LimitContainsInterface
     {
         return new LimitContainsStub();
     }

@@ -12,23 +12,13 @@ interface RecordsSearchModelInterface
      * @param string[] $selectFields
      * @param string[] $sortFields
      * @param SpecificationInterface|null $specification
+     * @param int $limit
      * @return StructureCollection
      */
-    public function findAllRecords(
+    public function findRecords(
         array $selectFields,
         array $sortFields,
-        ?SpecificationInterface $specification
+        ?SpecificationInterface $specification,
+        int $limit
     ): StructureCollection;
-
-    /**
-     * @param string[] $selectFields
-     * @param string[] $sortFields
-     * @param SpecificationInterface|null $specification
-     * @return Structure|null
-     */
-    public function findFirstRecordOrNull(
-        array $selectFields,
-        array $sortFields,
-        ?SpecificationInterface $specification
-    ): ?Structure;
 }

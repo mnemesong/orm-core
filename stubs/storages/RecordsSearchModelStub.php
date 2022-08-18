@@ -16,6 +16,7 @@ final class RecordsSearchModelStub implements RecordsSearchModelInterface
     public static array $lastSortFields = [];
     public static ?SpecificationInterface $lastSpecificationUsed = null;
     public static string $lastMethodUsed = '';
+    public static ?int $lastUsedLimit = null;
 
     /**
      * @return void
@@ -26,41 +27,27 @@ final class RecordsSearchModelStub implements RecordsSearchModelInterface
         self::$lastSelectFields = [];
         self::$lastSortFields = [];
         self::$lastSpecificationUsed = null;
+        self::$lastUsedLimit = null;
     }
 
     /**
      * @param string[] $selectFields
      * @param string[] $sortFields
      * @param SpecificationInterface|null $specification
+     * @param int $limit
      * @return StructureCollection
      */
-    public function findAllRecords(
+    public function findRecords(
         array $selectFields,
         array $sortFields,
-        ?SpecificationInterface $specification
+        ?SpecificationInterface $specification,
+        int $limit
     ): StructureCollection {
         self::$lastSelectFields = $selectFields;
         self::$lastSortFields = $sortFields;
         self::$lastMethodUsed = 'findAllRecords';
         self::$lastSpecificationUsed = $specification;
+        self::$lastUsedLimit = $limit;
         return new StructureCollection([]);
-    }
-
-    /**
-     * @param string[] $selectFields
-     * @param string[] $sortFields
-     * @param SpecificationInterface|null $specification
-     * @return Structure|null
-     */
-    public function findFirstRecordOrNull(
-        array $selectFields,
-        array $sortFields,
-        ?SpecificationInterface $specification
-    ): ?Structure {
-        self::$lastSelectFields = $selectFields;
-        self::$lastSortFields = $sortFields;
-        self::$lastMethodUsed = 'findFirstRecordOrNull';
-        self::$lastSpecificationUsed = $specification;
-        return null;
     }
 }
