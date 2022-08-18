@@ -10,12 +10,12 @@ trait LimitExecutableTestTrait
     /**
      * @return TestCase
      */
-    abstract public function useTestCase(): TestCase;
+    abstract protected function useTestCase(): TestCase;
 
     /**
      * @return LimitExecutableInterface
      */
-    abstract public function initLimitExecutable(): LimitExecutableInterface;
+    abstract protected function initLimitExecutable(): LimitExecutableInterface;
 
     /**
      * @return void

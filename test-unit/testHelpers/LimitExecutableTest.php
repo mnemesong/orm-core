@@ -11,12 +11,12 @@ class LimitExecutableTest extends TestCase
 {
     use LimitExecutableTestTrait;
 
-    public function useTestCase(): TestCase
+    protected function useTestCase(): TestCase
     {
         return $this;
     }
 
-    public function initLimitExecutable(): LimitExecutableInterface
+    protected function initLimitExecutable(): LimitExecutableInterface
     {
         return new LimitExecutableStub();
     }

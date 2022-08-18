@@ -11,12 +11,12 @@ class AbleToSortTest extends TestCase
 {
     use AbleToSortTestTrait;
 
-    public function getInitializedAbleToSort(): AbleToSortInterface
+    protected function getInitializedAbleToSort(): AbleToSortInterface
     {
         return new AbleToSortStub();
     }
 
-    public function useTestCase(): TestCase
+    protected function useTestCase(): TestCase
     {
         return $this;
     }

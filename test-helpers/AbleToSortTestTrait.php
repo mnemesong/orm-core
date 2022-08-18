@@ -10,12 +10,12 @@ trait AbleToSortTestTrait
     /**
      * @return AbleToSortInterface
      */
-    abstract public function getInitializedAbleToSort(): AbleToSortInterface;
+    abstract protected function getInitializedAbleToSort(): AbleToSortInterface;
 
     /**
      * @return TestCase
      */
-    abstract public function useTestCase(): TestCase;
+    abstract protected function useTestCase(): TestCase;
 
     /**
      * @return void
