@@ -23,12 +23,13 @@ interface StorageInterface
 
     /**
      * @param Structure $struct
-     * @return mixed
+     * @return UpdateCommand
      */
     function getUpdateAllCommand(Structure $struct): UpdateCommand;
 
     /**
-     * @return mixed
+     * @param Structure $struct
+     * @return SaveCommand
      */
     function getSaveOneSmartCommand(Structure $struct): SaveCommand;
 

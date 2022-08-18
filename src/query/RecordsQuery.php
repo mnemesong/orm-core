@@ -22,7 +22,7 @@ class RecordsQuery implements SpecifiedInterface, AbleToSortInterface
 
     /**
      * @param RecordsSearchModelInterface $searchModel
-     * @param array $sortFields
+     * @param string[] $sortFields
      */
     public function __construct(RecordsSearchModelInterface $searchModel, array $sortFields = [])
     {

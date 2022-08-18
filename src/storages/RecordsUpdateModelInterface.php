@@ -11,7 +11,7 @@ interface RecordsUpdateModelInterface
      * @param Structure $struct
      * @param SpecificationInterface|null $spec
      * @param int $limit
-     * @param array $sortFields
+     * @param string[] $sortFields
      * @return void
      */
     public function updateRecords(Structure $struct, ?SpecificationInterface $spec, int $limit, array $sortFields): void;
