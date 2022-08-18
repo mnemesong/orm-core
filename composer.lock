@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa1882399c658a3968dbf8f6b3ee4992",
+    "content-hash": "ea0f85d27756a2e6e78b8fea69257758",
     "packages": [
         {
             "name": "mnemesong/scalarex",
-            "version": "0.1.1",
+            "version": "0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mnemesong/scalarex.git",
-                "reference": "5debf3919e739dba9a9d1ba290177455d5c60f27"
+                "reference": "52249eb70be5a028030bab84c4e099362440429a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnemesong/scalarex/zipball/5debf3919e739dba9a9d1ba290177455d5c60f27",
-                "reference": "5debf3919e739dba9a9d1ba290177455d5c60f27",
+                "url": "https://api.github.com/repos/mnemesong/scalarex/zipball/52249eb70be5a028030bab84c4e099362440429a",
+                "reference": "52249eb70be5a028030bab84c4e099362440429a",
                 "shasum": ""
             },
             "require": {
@@ -49,9 +49,9 @@
             "description": "Scalar specifications expressor",
             "support": {
                 "issues": "https://github.com/mnemesong/scalarex/issues",
-                "source": "https://github.com/mnemesong/scalarex/tree/0.1.1"
+                "source": "https://github.com/mnemesong/scalarex/tree/0.2"
             },
-            "time": "2022-08-17T14:41:48+00:00"
+            "time": "2022-08-18T21:21:41+00:00"
         },
         {
             "name": "mnemesong/spex",
