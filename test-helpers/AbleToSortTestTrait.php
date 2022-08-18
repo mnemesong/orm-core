@@ -7,10 +7,19 @@ use PHPUnit\Framework\TestCase;
 
 trait AbleToSortTestTrait
 {
+    /**
+     * @return AbleToSortInterface
+     */
     abstract public function getInitializedAbleToSort(): AbleToSortInterface;
 
+    /**
+     * @return TestCase
+     */
     abstract public function useTestCase(): TestCase;
 
+    /**
+     * @return void
+     */
     public function testSorting(): void
     {
         $q1 = $this->getInitializedAbleToSort();
@@ -25,6 +34,9 @@ trait AbleToSortTestTrait
         $this->useTestCase()->assertEquals(['name', 'date'], $q2->getSortFields());
     }
 
+    /**
+     * @return void
+     */
     public function testSortingException1(): void
     {
         $q1 = $this->getInitializedAbleToSort();
@@ -33,6 +45,9 @@ trait AbleToSortTestTrait
         $q1->sortedBy([112, 'name']);
     }
 
+    /**
+     * @return void
+     */
     public function testSortingException2(): void
     {
         $q1 = $this->getInitializedAbleToSort();
