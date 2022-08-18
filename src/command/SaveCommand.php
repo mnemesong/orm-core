@@ -2,6 +2,8 @@
 
 namespace Mnemesong\OrmCore\command;
 
+use Mnemesong\OrmCore\ableToRecording\AbleToRecordingInterface;
+use Mnemesong\OrmCore\ableToRecording\AbleToRecordingTrait;
 use Mnemesong\OrmCore\storages\RecordsSaveModelInterface;
 use Mnemesong\Structure\Structure;
 use Webmozart\Assert\Assert;
@@ -15,12 +17,13 @@ use Webmozart\Assert\Assert;
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class SaveCommand
+class SaveCommand implements AbleToRecordingInterface
 {
+    use AbleToRecordingTrait;
+
     //Smart updated means storage will try rewrite saved record on duplication saved record
     //Not Smart updated means storage will throw exception on duplication saved record
     protected bool $smartUpdate = false;
-    protected Structure $struct;
     protected RecordsSaveModelInterface $recordSaveModel;
 
     /**
@@ -31,14 +34,6 @@ class SaveCommand
     {
         $this->recordSaveModel = $createModel;
         $this->setStructure($struct);
-    }
-
-    /**
-     * @return Structure
-     */
-    public function getStructure(): Structure
-    {
-        return $this->struct;
     }
 
     /**
@@ -83,15 +78,5 @@ class SaveCommand
     public function exec(): void
     {
         $this->recordSaveModel->createRecord($this->struct, $this->smartUpdate);
-    }
-
-    /**
-     * @param Structure $struct
-     * @return void
-     */
-    protected function setStructure(Structure $struct): void
-    {
-        Assert::notEmpty($struct->attributes(), "Structure should be not empty");
-        $this->struct = $struct;
     }
 }

@@ -3,10 +3,12 @@
 namespace Mnemesong\OrmCoreUnit\command;
 
 use _PHPStan_9a6ded56a\Symfony\Component\Console\Command\Command;
+use Mnemesong\OrmCore\ableToRecording\AbleToRecordingInterface;
 use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
 use Mnemesong\OrmCore\command\SaveCommand;
 use Mnemesong\OrmCore\limitExecutable\LimitExecutableInterface;
 use Mnemesong\OrmCoreStubs\storages\RecordsSaveModelStub;
+use Mnemesong\OrmCoreTestHelpers\AbleToRecordingTestTrait;
 use Mnemesong\OrmCoreTestHelpers\AbleToSortTestTrait;
 use Mnemesong\OrmCoreTestHelpers\LimitExecutableTestTrait;
 use Mnemesong\Spex\specified\SpecifiedInterface;
@@ -16,6 +18,8 @@ use PHPUnit\Framework\TestCase;
 
 class SaveCommandTest extends TestCase
 {
+    use AbleToRecordingTestTrait;
+
     protected function getSavedStructure(): Structure
     {
         return new Structure(['name' => 'Sam', 'comment' => 'Some comment', 'age' => 18]);
@@ -24,6 +28,16 @@ class SaveCommandTest extends TestCase
     protected function getInitializedSaveCommand(): SaveCommand
     {
         return new SaveCommand(new RecordsSaveModelStub(), $this->getSavedStructure());
+    }
+
+    protected function useTestCase(): TestCase
+    {
+        return $this;
+    }
+
+    protected function getAbleToRecordingWithStructure(Structure $struct): AbleToRecordingInterface
+    {
+        return new SaveCommand(new RecordsSaveModelStub(), $struct);
     }
 
     public function testBasics(): void
