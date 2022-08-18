@@ -1,10 +1,10 @@
 <?php
 
-namespace Mnemesong\OrmCore\limitExecutable;
+namespace Mnemesong\OrmCore\limitContains;
 
 use Webmozart\Assert\Assert;
 
-trait LimitExecutableTrait
+trait LimitContainsTrait
 {
     protected int $limit = 0;
 

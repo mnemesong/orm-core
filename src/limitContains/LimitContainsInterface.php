@@ -1,6 +1,6 @@
 <?php
 
-namespace Mnemesong\OrmCore\limitExecutable;
+namespace Mnemesong\OrmCore\limitContains;
 
 use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
 
@@ -11,7 +11,7 @@ use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-interface LimitExecutableInterface
+interface LimitContainsInterface
 {
     public function withoutLimit(): self;
 

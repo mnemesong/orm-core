@@ -2,10 +2,10 @@
 
 namespace Mnemesong\OrmCoreTestHelpers;
 
-use Mnemesong\OrmCore\limitExecutable\LimitExecutableInterface;
+use Mnemesong\OrmCore\limitContains\LimitContainsInterface;
 use PHPUnit\Framework\TestCase;
 
-trait LimitExecutableTestTrait
+trait LimitContainsTestTrait
 {
     /**
      * @return TestCase
@@ -13,16 +13,16 @@ trait LimitExecutableTestTrait
     abstract protected function useTestCase(): TestCase;
 
     /**
-     * @return LimitExecutableInterface
+     * @return LimitContainsInterface
      */
-    abstract protected function initLimitExecutable(): LimitExecutableInterface;
+    abstract protected function initLimitContains(): LimitContainsInterface;
 
     /**
      * @return void
      */
     public function testLimits(): void
     {
-        $obj1 = $this->initLimitExecutable();
+        $obj1 = $this->initLimitContains();
         $this->useTestCase()->assertEquals($obj1->getLimit(), 0);
 
         $obj2 = $obj1->withLimit(4);
@@ -39,7 +39,7 @@ trait LimitExecutableTestTrait
      */
     public function testLimitsException1(): void
     {
-        $obj1 = $this->initLimitExecutable();
+        $obj1 = $this->initLimitContains();
         $this->expectException(\InvalidArgumentException::class);
         $obj2 = $obj1->withLimit(-1);
     }

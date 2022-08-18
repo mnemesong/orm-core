@@ -5,11 +5,11 @@ namespace Mnemesong\OrmCoreUnit\command;
 use Mnemesong\OrmCore\ableToRecording\AbleToRecordingInterface;
 use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
 use Mnemesong\OrmCore\command\UpdateCommand;
-use Mnemesong\OrmCore\limitExecutable\LimitExecutableInterface;
+use Mnemesong\OrmCore\limitContains\LimitContainsInterface;
 use Mnemesong\OrmCoreStubs\storages\RecordsUpdateModelStub;
 use Mnemesong\OrmCoreTestHelpers\AbleToRecordingTestTrait;
 use Mnemesong\OrmCoreTestHelpers\AbleToSortTestTrait;
-use Mnemesong\OrmCoreTestHelpers\LimitExecutableTestTrait;
+use Mnemesong\OrmCoreTestHelpers\LimitContainsTestTrait;
 use Mnemesong\Spex\Sp;
 use Mnemesong\Spex\specified\SpecifiedInterface;
 use Mnemesong\SpexUnitTest\specified\traits\SpecifiedTestTrait;
@@ -21,7 +21,7 @@ class UpdateCommandTest extends TestCase
     use SpecifiedTestTrait;
     use AbleToRecordingTestTrait;
     use AbleToSortTestTrait;
-    use LimitExecutableTestTrait;
+    use LimitContainsTestTrait;
 
     /**
      * @param Structure $structure
@@ -66,9 +66,9 @@ class UpdateCommandTest extends TestCase
     }
 
     /**
-     * @return LimitExecutableInterface
+     * @return LimitContainsInterface
      */
-    protected function initLimitExecutable(): LimitExecutableInterface
+    protected function initLimitContains(): LimitContainsInterface
     {
         return $this->getUpdateCommand($this->getTestStructure());
     }

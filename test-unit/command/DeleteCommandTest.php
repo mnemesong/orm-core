@@ -4,10 +4,10 @@ namespace Mnemesong\OrmCoreUnit\command;
 
 use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
 use Mnemesong\OrmCore\command\DeleteCommand;
-use Mnemesong\OrmCore\limitExecutable\LimitExecutableInterface;
+use Mnemesong\OrmCore\limitContains\LimitContainsInterface;
 use Mnemesong\OrmCoreStubs\storages\RecordsDeleteModelStub;
 use Mnemesong\OrmCoreTestHelpers\AbleToSortTestTrait;
-use Mnemesong\OrmCoreTestHelpers\LimitExecutableTestTrait;
+use Mnemesong\OrmCoreTestHelpers\LimitContainsTestTrait;
 use Mnemesong\Spex\Sp;
 use Mnemesong\Spex\specified\SpecifiedInterface;
 use Mnemesong\SpexUnitTest\specified\traits\SpecifiedTestTrait;
@@ -17,7 +17,7 @@ class DeleteCommandTest extends TestCase
 {
     use SpecifiedTestTrait;
     use AbleToSortTestTrait;
-    use LimitExecutableTestTrait;
+    use LimitContainsTestTrait;
 
     protected function getDeleteCommand(): DeleteCommand
     {
@@ -34,7 +34,7 @@ class DeleteCommandTest extends TestCase
         return $this;
     }
 
-    protected function initLimitExecutable(): LimitExecutableInterface
+    protected function initLimitContains(): LimitContainsInterface
     {
         return $this->getDeleteCommand();
     }

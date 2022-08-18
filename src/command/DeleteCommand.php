@@ -4,8 +4,8 @@ namespace Mnemesong\OrmCore\command;
 
 use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
 use Mnemesong\OrmCore\ableToSort\AbleToSortTrait;
-use Mnemesong\OrmCore\limitExecutable\LimitExecutableInterface;
-use Mnemesong\OrmCore\limitExecutable\LimitExecutableTrait;
+use Mnemesong\OrmCore\limitContains\LimitContainsInterface;
+use Mnemesong\OrmCore\limitContains\LimitContainsTrait;
 use Mnemesong\OrmCore\storages\RecordsDeleteModelInterface;
 use Mnemesong\Spex\specified\SpecifiedInterface;
 use Mnemesong\Spex\specified\SpecifiedTrait;
@@ -19,10 +19,10 @@ use Mnemesong\Spex\specified\SpecifiedTrait;
  *
  * @author Analoty Starodubtsev "Pantagruel74" Tostar74@mail.ru
  */
-class DeleteCommand implements AbleToSortInterface, LimitExecutableInterface, SpecifiedInterface
+class DeleteCommand implements AbleToSortInterface, LimitContainsInterface, SpecifiedInterface
 {
     use AbleToSortTrait;
-    use LimitExecutableTrait;
+    use LimitContainsTrait;
     use SpecifiedTrait;
 
     protected RecordsDeleteModelInterface $deleteModel;
