@@ -54,7 +54,7 @@ class SaveCommandTest extends TestCase
     public function testRun2(): void
     {
         RecordsSaveModelStub::clear();
-        (new SaveCommand(new RecordsSaveModelStub(), new Structure(['id' => 2]), true))->exec();
+        (new SaveCommand(new RecordsSaveModelStub(), new Structure(['id' => 2])))->withSmartUpdate()->exec();
         $this->assertEquals(new Structure(['id' => 2]), RecordsSaveModelStub::$lastUsedStructure);
         $this->assertEquals(true, RecordsSaveModelStub::$lastUsedSmartSave);
         $this->assertEquals('createRecord', RecordsSaveModelStub::$lastUsedMethod);

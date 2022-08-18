@@ -19,20 +19,18 @@ class SaveCommand
 {
     //Smart updated means storage will try rewrite saved record on duplication saved record
     //Not Smart updated means storage will throw exception on duplication saved record
-    protected bool $smartUpdate;
+    protected bool $smartUpdate = false;
     protected Structure $struct;
     protected RecordsSaveModelInterface $recordSaveModel;
 
     /**
      * @param RecordsSaveModelInterface $createModel
      * @param Structure $struct
-     * @param bool $smartUpdate
      */
-    public function __construct(RecordsSaveModelInterface $createModel, Structure $struct, bool $smartUpdate = false)
+    public function __construct(RecordsSaveModelInterface $createModel, Structure $struct)
     {
         $this->recordSaveModel = $createModel;
         $this->setStructure($struct);
-        $this->smartUpdate = $smartUpdate;
     }
 
     /**
