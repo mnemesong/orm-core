@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30020a39a9963a4b06550863c40f0e68",
+    "content-hash": "fa1882399c658a3968dbf8f6b3ee4992",
     "packages": [
         {
             "name": "mnemesong/scalarex",

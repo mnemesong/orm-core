@@ -7,7 +7,7 @@
         "webmozart/assert": "1.11.*",
         "mnemesong/spex": "0.7.*",
         "mnemesong/structure": "0.4.*",
-        "mnemesong/scalarex": "*"
+        "mnemesong/scalarex": "0.1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
