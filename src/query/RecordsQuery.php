@@ -2,6 +2,8 @@
 
 namespace Mnemesong\OrmCore\query;
 
+use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
+use Mnemesong\OrmCore\ableToSort\AbleToSortTrait;
 use Mnemesong\OrmCore\storages\RecordsSearchModelInterface;
 use Mnemesong\Spex\specified\SpecifiedInterface;
 use Mnemesong\Spex\specified\SpecifiedTrait;
@@ -9,14 +11,13 @@ use Mnemesong\Structure\collections\StructureCollection;
 use Mnemesong\Structure\Structure;
 use Webmozart\Assert\Assert;
 
-class RecordsQuery implements SpecifiedInterface
+class RecordsQuery implements SpecifiedInterface, AbleToSortInterface
 {
     use SpecifiedTrait;
+    use AbleToSortTrait;
 
     /* @phpstan-ignore-next-line  */
     protected array $selectFields = [];
-    /* @phpstan-ignore-next-line  */
-    protected array $sortFields = [];
     protected RecordsSearchModelInterface $searchModel;
 
     /**
@@ -48,36 +49,6 @@ class RecordsQuery implements SpecifiedInterface
         $clone = clone $this;
         $clone->selectFields = [];
         return $clone;
-    }
-
-    /**
-     * @param string[] $fields
-     * @return self
-     */
-    public function sortedBy(array $fields): self
-    {
-        Assert::allStringNotEmpty($fields, 'Fields list should be array of not empty strings');
-        $clone = clone $this;
-        $clone->sortFields = $fields;
-        return $clone;
-    }
-
-    /**
-     * @return self
-     */
-    public function withoutSorting(): self
-    {
-        $clone = clone $this;
-        $clone->sortFields = [];
-        return $clone;
-    }
-
-    /**
-     * @return string[]
-     */
-    public function getSortFields(): array
-    {
-        return $this->sortFields;
     }
 
     /**

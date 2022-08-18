@@ -2,8 +2,10 @@
 
 namespace Mnemesong\OrmCoreUnit\query;
 
+use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
 use Mnemesong\OrmCore\query\RecordsQuery;
 use Mnemesong\OrmCoreStubs\storages\RecordsSearchModelStub;
+use Mnemesong\OrmCoreTestHelpers\AbleToSortTestTrait;
 use Mnemesong\Spex\Sp;
 use Mnemesong\Spex\specified\SpecifiedInterface;
 use Mnemesong\SpexUnitTest\specified\traits\SpecifiedTestTrait;
@@ -13,15 +15,21 @@ use PHPUnit\Framework\TestCase;
 class RecordsQueryTest extends TestCase
 {
     use SpecifiedTestTrait;
+    use AbleToSortTestTrait;
+
+    public function getInitializedAbleToSort(): AbleToSortInterface
+    {
+        return $this->getInitializedQuery();
+    }
+
+    public function useTestCase(): TestCase
+    {
+        return $this;
+    }
 
     protected function getInitializedSpecified(): SpecifiedInterface
     {
-        return new RecordsQuery(new RecordsSearchModelStub());
-    }
-
-    protected function useTestCase(): TestCase
-    {
-        return $this;
+        return $this->getInitializedQuery();
     }
 
     protected function getInitializedQuery(): RecordsQuery
@@ -29,35 +37,6 @@ class RecordsQueryTest extends TestCase
         return new RecordsQuery(new RecordsSearchModelStub());
     }
 
-    public function testSorting(): void
-    {
-        $q1 = self::getInitializedQuery();
-        $this->assertEquals([], $q1->getSortFields());
-
-        $q2 = $q1->sortedBy(['name', 'date']);
-        $this->assertEquals([], $q1->getSortFields());
-        $this->assertEquals(['name', 'date'], $q2->getSortFields());
-
-        $q3 = $q2->withoutSorting();
-        $this->assertEquals([], $q3->getSortFields());
-        $this->assertEquals(['name', 'date'], $q2->getSortFields());
-    }
-
-    public function testSortingException1(): void
-    {
-        $q1 = self::getInitializedQuery();
-        $this->expectException(\InvalidArgumentException::class);
-        /* @phpstan-ignore-next-line  */
-        $q1->sortedBy([112, 'name']);
-    }
-
-    public function testSortingException2(): void
-    {
-        $q1 = self::getInitializedQuery();
-        $this->expectException(\InvalidArgumentException::class);
-        /* @phpstan-ignore-next-line */
-        $q1->sortedBy([['data'], 'name']);
-    }
 
     public function testSelectFields(): void
     {
@@ -102,4 +81,5 @@ class RecordsQueryTest extends TestCase
         $this->assertEquals(['subName', 'link'], RecordsSearchModelStub::$lastSortFields);
         $this->assertEquals(Sp::ex('in', 'date', ['2022-01-02']), RecordsSearchModelStub::$lastSpecificationUsed);
     }
+
 }
