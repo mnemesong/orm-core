@@ -6,7 +6,6 @@ use Mnemesong\OrmCore\ableToRecording\AbleToRecordingInterface;
 use Mnemesong\OrmCore\ableToRecording\AbleToRecordingTrait;
 use Mnemesong\OrmCore\storages\RecordsSaveModelInterface;
 use Mnemesong\Structure\Structure;
-use Webmozart\Assert\Assert;
 
 /**
  * ENG: Object reflecting the operation of adding/smartly adding a new record to the repository.

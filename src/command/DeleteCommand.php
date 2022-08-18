@@ -7,7 +7,6 @@ use Mnemesong\OrmCore\ableToSort\AbleToSortTrait;
 use Mnemesong\OrmCore\limitExecutable\LimitExecutableInterface;
 use Mnemesong\OrmCore\limitExecutable\LimitExecutableTrait;
 use Mnemesong\OrmCore\storages\RecordsDeleteModelInterface;
-use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Spex\specified\SpecifiedInterface;
 use Mnemesong\Spex\specified\SpecifiedTrait;
 

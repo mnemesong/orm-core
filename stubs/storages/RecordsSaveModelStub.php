@@ -3,7 +3,6 @@
 namespace Mnemesong\OrmCoreStubs\storages;
 
 use Mnemesong\OrmCore\storages\RecordsSaveModelInterface;
-use Mnemesong\OrmCore\storages\RecordsSearchModelInterface;
 use Mnemesong\Structure\Structure;
 
 class RecordsSaveModelStub implements RecordsSaveModelInterface
