@@ -9,6 +9,7 @@ class RecordsDeleteModelStub implements RecordsDeleteModelInterface
 {
     public static ?SpecificationInterface $lastUsedSpecification = null;
     public static ?int $lastUsedLimit = null;
+    /* @phpstan-ignore-next-line  */
     public static ?array $lastUsedSortFields = null;
     public static string $lastUsedMethod = '';
 
@@ -26,7 +27,7 @@ class RecordsDeleteModelStub implements RecordsDeleteModelInterface
     /**
      * @param SpecificationInterface|null $spec
      * @param int $limit
-     * @param array $sortFields
+     * @param string[] $sortFields
      * @return void
      */
     public function deleteRecords(?SpecificationInterface $spec, int $limit, array $sortFields): void

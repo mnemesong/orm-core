@@ -11,6 +11,7 @@ class RecordsUpdateModelStub implements RecordsUpdateModelInterface
     public static ?Structure $lastUsedStructure = null;
     public static ?SpecificationInterface $lastUsedSpecification = null;
     public static ?int $lastUsedLimit = null;
+    /* @phpstan-ignore-next-line  */
     public static ?array $lastUsedSortFields = null;
     public static string $lastUsedMethod = '';
 
