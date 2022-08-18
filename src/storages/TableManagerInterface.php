@@ -9,7 +9,7 @@ use Mnemesong\OrmCore\query\RecordsQuery;
 use Mnemesong\OrmCore\query\ScalarsQuery;
 use Mnemesong\Structure\Structure;
 
-interface StorageInterface
+interface TableManagerInterface
 {
     /**
      * @return RecordsQuery
