@@ -3,6 +3,7 @@
 namespace Mnemesong\OrmCoreStubs\storages;
 
 use Mnemesong\OrmCore\storages\ScalarsSearchModelInterface;
+use Mnemesong\Scalarex\specification\ScalarSpecification;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Structure\Structure;
 
@@ -10,10 +11,12 @@ class ScalarsSearchModelStub implements ScalarsSearchModelInterface
 {
     /* @phpstan-ignore-next-line */
     public static array $lastScalars = [];
-    /* @phpstan-ignore-next-line */
     public static string $lastMethodUsed = '';
     public static ?SpecificationInterface $lastSpecificationUsed = null;
 
+    /**
+     * @return void
+     */
     public static function clear(): void
     {
         self::$lastScalars = [];
@@ -22,7 +25,7 @@ class ScalarsSearchModelStub implements ScalarsSearchModelInterface
     }
 
     /**
-     * @param array $scalars
+     * @param ScalarSpecification[] $scalars
      * @param SpecificationInterface|null $spec
      * @return Structure
      */

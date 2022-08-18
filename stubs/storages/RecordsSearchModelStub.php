@@ -29,8 +29,8 @@ final class RecordsSearchModelStub implements RecordsSearchModelInterface
     }
 
     /**
-     * @param array $selectFields
-     * @param array $sortFields
+     * @param string[] $selectFields
+     * @param string[] $sortFields
      * @param SpecificationInterface|null $specification
      * @return StructureCollection
      */
@@ -47,8 +47,8 @@ final class RecordsSearchModelStub implements RecordsSearchModelInterface
     }
 
     /**
-     * @param array $selectFields
-     * @param array $sortFields
+     * @param string[] $selectFields
+     * @param string[] $sortFields
      * @param SpecificationInterface|null $specification
      * @return Structure|null
      */
