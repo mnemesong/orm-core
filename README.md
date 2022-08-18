@@ -90,6 +90,39 @@ the storages are in separate packages.</p>
     <li><code>find(): StructureCollection</code> - Performs a search and returns the found results as an object
         StructureCollection.</li>
 </ul>
+<h6>Example</h6>
+<code>$checkAuthRecord = $someTable->selectRecordsQuery()<br>
+->andWhere(Sp::ex('s=', 'login', $inputLogin))<br>
+->andWhere(Sp::ex('s=', 'passwordHash', HashTool::hash($inputPass)))<br>
+->withLimit(1)<br>
+->find()<br>
+->getFirstAsserted()</code>
+
+<h4>2. ScalarsQuery</h4>
+<p>Allows you to get scalar data sets for records that meet the specified specification as a Structure object
+(See package mnemesong/structure).</p>
+<h6>Methods</h6>
+<ul>
+    <li><code>where(SpecificationInterface $spec): self</code>, <code>andWhere(SpecificationInterface $spec): self</code>,
+        <code>orWhere(SpecificationInterface $spec): self</code>- Allows you to get a ScalarQuery with a specification
+        search.</li>
+    <li><code>withAddScalar(ScalarSpecification $spec): self</code> - Allows you to get a ScalarQuery with a query
+        another scalar lookup value. </li>
+    <li><code>withScalarsFilteredBy(callable $filterFunc): self</code> - Allows you to get a ScalarQuery with a new
+        a list of requests for rock values obtained using the filtering function. </li>
+    <li><code>find(): Structure</code> - Performs a search and aggregation and returns the found results as an object
+        structure. To configure the keys under which the results will be stored, use the method
+        <code>ScalarSpecification->withName(string $name)</code>. Then in from the resulting Structure object
+        the specified scalar value can be obtained using the Structure->get(string $name): scalar</li> method
+</ul>
+<h6>Example</h6>
+<code>$numOfPotentialCustomers = $someTable<br>
+->getScalarsQuery()<br>
+->withAddScalar(Scalar::count()->as('customersCount'))<br>
+->andWhere(Sp::ex('n>', 'clicksOnBuyButton', 0))<br>
+->find()<br>
+->get('customersCount')</code>
+<hr>
 
 <h3>RUS</h3>
 <p>Данный пакет предоставляет два типа запросов:</p>
@@ -110,6 +143,39 @@ the storages are in separate packages.</p>
     <li><code>find(): StructureCollection</code> - Выполнгяет поиск и выдает найденные результаты в виде объекта
         StructureCollection.</li>
 </ul>
+<h6>Пример</h6>
+<code>$checkAuthRecord = $someTable<br>
+->selectRecordsQuery()<br>
+->andWhere(Sp::ex('s=', 'login', $inputLogin))<br>
+->andWhere(Sp::ex('s=', 'passwordHash', HashTool::hash($inputPass)))<br>
+->withLimit(1)<br>
+->find()<br>
+->getFirstAsserted()</code>
+
+<h4>2. ScalarsQuery</h4>
+<p>Позволяет получать наборы скалярных данных по записям отвечающим указанной спецификации в виде объекта Structure 
+(См. пакет mnemesong/structure).</p>
+<h6>Методы</h6>
+<ul>
+    <li><code>where(SpecificationInterface $spec): self</code>, <code>andWhere(SpecificationInterface $spec): self</code>,
+        <code>orWhere(SpecificationInterface $spec): self</code>- Позволяет получить ScalarQuery со спецификацией
+        поиска.</li>
+    <li><code>withAddScalar(ScalarSpecification $spec): self</code> - Позволяет получить ScalarQuery с запросом
+        еще одного скалярного значения поиска. </li>
+    <li><code>withScalarsFilteredBy(callable $filterFunc): self</code> - Позволяет получить ScalarQuery с новым
+        списком запросо на скаляные значения, полученным с помощью функции фильтрации. </li>
+    <li><code>find(): Structure</code> - Выполняет поиск и аггрегацию и выдает найденные результаты в виде объекта
+        Structure. Для настройки ключей под которыми будут храниться полученные результаты, используйте метод
+        <code>ScalarSpecification->withName(string $name)</code>. Тогда в из полученного Structure объекта
+        указанную скалярную величину можно будет получить методом Structure->get(string $name): scalar</li>
+</ul>
+<h6>Пример</h6>
+<code>$numOfPotentialCustomers = $someTable<br>
+->getScalarsQuery()<br>
+->withAddScalar(Scalar::count()->as('customersCount'))<br>
+->andWhere(Sp::ex('n>', 'clicksOnBuyButton', 0))<br>
+->find()<br>
+->get('customersCount')</code>
 <hr>
 
 <h2>License / Лицензия</h2>
