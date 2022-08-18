@@ -13,7 +13,9 @@ class RecordsQuery implements SpecifiedInterface
 {
     use SpecifiedTrait;
 
+    /* @phpstan-ignore-next-line  */
     protected array $selectFields = [];
+    /* @phpstan-ignore-next-line  */
     protected array $sortFields = [];
     protected RecordsSearchModelInterface $searchModel;
 
@@ -71,7 +73,7 @@ class RecordsQuery implements SpecifiedInterface
     }
 
     /**
-     * @return array
+     * @return string[]
      */
     public function getSortFields(): array
     {
@@ -79,7 +81,7 @@ class RecordsQuery implements SpecifiedInterface
     }
 
     /**
-     * @return array
+     * @return string[]
      */
     public function getSelectFields(): array
     {

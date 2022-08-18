@@ -13,12 +13,13 @@ class ScalarsQuery implements SpecifiedInterface
 {
     use SpecifiedTrait;
 
+    /* @phpstan-ignore-next-line  */
     protected array $scalars;
     protected ScalarsSearchModelInterface $searchModel;
 
     /**
      * @param ScalarsSearchModelInterface $searchModel
-     * @param array $scalars
+     * @param ScalarSpecification[] $scalars
      */
     public function __construct(ScalarsSearchModelInterface $searchModel, array $scalars = [])
     {
@@ -39,7 +40,7 @@ class ScalarsQuery implements SpecifiedInterface
     }
 
     /**
-     * @return array
+     * @return ScalarSpecification[]
      */
     public function getScalars(): array
     {

@@ -9,8 +9,8 @@ use Mnemesong\Structure\Structure;
 interface RecordsSearchModelInterface
 {
     /**
-     * @param array $selectFields
-     * @param array $sortFields
+     * @param string[] $selectFields
+     * @param string[] $sortFields
      * @param SpecificationInterface|null $specification
      * @return StructureCollection
      */
@@ -21,8 +21,8 @@ interface RecordsSearchModelInterface
     ): StructureCollection;
 
     /**
-     * @param array $selectFields
-     * @param array $sortFields
+     * @param string[] $selectFields
+     * @param string[] $sortFields
      * @param SpecificationInterface|null $specification
      * @return Structure|null
      */
