@@ -5,10 +5,10 @@
     "require": {
         "php": ">=7.4",
         "webmozart/assert": "1.11.*",
-        "mnemesong/spex": "0.7.*",
+        "mnemesong/spex": "0.8.*",
         "mnemesong/structure": "0.4.*",
         "mnemesong/scalarex": "0.2.*",
-        "mnemesong/table-schema": "0.3.*"
+        "mnemesong/table-schema": "0.4.*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
