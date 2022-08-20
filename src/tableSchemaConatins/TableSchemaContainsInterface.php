@@ -7,8 +7,8 @@ use Mnemesong\TableSchema\table\TableSchema;
 interface TableSchemaContainsInterface
 {
     /**
-     * @param TableSchema|null $schema
-     * @return mixed
+     * @param TableSchema $schema
+     * @return self
      */
     public function withTableSchema(TableSchema $schema): self;
 
