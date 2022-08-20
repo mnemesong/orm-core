@@ -3,12 +3,15 @@
 namespace Mnemesong\OrmCoreStubs\storages;
 
 use Mnemesong\OrmCore\storages\ScalarsSearchModelInterface;
+use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsTrait;
 use Mnemesong\Scalarex\specification\ScalarSpecification;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Structure\Structure;
 
 class ScalarsSearchModelStub implements ScalarsSearchModelInterface
 {
+    use TableSchemaContainsTrait;
+
     /* @phpstan-ignore-next-line */
     public static array $lastScalars = [];
     public static string $lastMethodUsed = '';

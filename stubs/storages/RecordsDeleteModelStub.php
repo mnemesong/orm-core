@@ -3,10 +3,13 @@
 namespace Mnemesong\OrmCoreStubs\storages;
 
 use Mnemesong\OrmCore\storages\RecordsDeleteModelInterface;
+use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsTrait;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 
 class RecordsDeleteModelStub implements RecordsDeleteModelInterface
 {
+    use TableSchemaContainsTrait;
+
     public static ?SpecificationInterface $lastUsedSpecification = null;
     public static ?int $lastUsedLimit = null;
     /* @phpstan-ignore-next-line  */

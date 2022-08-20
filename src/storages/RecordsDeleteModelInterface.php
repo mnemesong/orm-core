@@ -2,9 +2,10 @@
 
 namespace Mnemesong\OrmCore\storages;
 
+use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsInterface;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 
-interface RecordsDeleteModelInterface
+interface RecordsDeleteModelInterface extends TableSchemaContainsInterface
 {
     /**
      * @param SpecificationInterface|null $spec

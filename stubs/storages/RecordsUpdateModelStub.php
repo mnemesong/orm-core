@@ -3,11 +3,14 @@
 namespace Mnemesong\OrmCoreStubs\storages;
 
 use Mnemesong\OrmCore\storages\RecordsUpdateModelInterface;
+use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsTrait;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Structure\Structure;
 
 class RecordsUpdateModelStub implements RecordsUpdateModelInterface
 {
+    use TableSchemaContainsTrait;
+
     public static ?Structure $lastUsedStructure = null;
     public static ?SpecificationInterface $lastUsedSpecification = null;
     public static ?int $lastUsedLimit = null;

@@ -3,6 +3,7 @@
 namespace Mnemesong\OrmCoreStubs\storages;
 
 use Mnemesong\OrmCore\storages\RecordsSearchModelInterface;
+use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsTrait;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Structure\collections\StructureCollection;
 use Mnemesong\Structure\Structure;
@@ -10,6 +11,8 @@ use Webmozart\Assert\Assert;
 
 final class RecordsSearchModelStub implements RecordsSearchModelInterface
 {
+    use TableSchemaContainsTrait;
+
     /* @phpstan-ignore-next-line */
     public static array $lastSelectFields = [];
     /* @phpstan-ignore-next-line */

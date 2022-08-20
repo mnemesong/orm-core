@@ -2,9 +2,10 @@
 
 namespace Mnemesong\OrmCore\storages;
 
+use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsInterface;
 use Mnemesong\Structure\Structure;
 
-interface RecordsSaveModelInterface
+interface RecordsSaveModelInterface extends TableSchemaContainsInterface
 {
     /**
      * @param Structure $structure

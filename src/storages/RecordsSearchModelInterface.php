@@ -2,11 +2,11 @@
 
 namespace Mnemesong\OrmCore\storages;
 
+use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsInterface;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Structure\collections\StructureCollection;
-use Mnemesong\Structure\Structure;
 
-interface RecordsSearchModelInterface
+interface RecordsSearchModelInterface extends TableSchemaContainsInterface
 {
     /**
      * @param string[] $selectFields

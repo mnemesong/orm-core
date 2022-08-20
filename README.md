@@ -178,6 +178,13 @@ the storages are in separate packages.</p>
 ->get('customersCount')</code>
 <hr>
 
+<h2>Commands / Комманды</h2>
+<h3>RUS</h3>
+<p>Данный пакет предоставляет три типа комманд:</p>
+<h4>1. SaveCommand</h4>
+<p>Позволяет сохранить запись в хранилище.</p>
+<hr>
+
 <h2>License / Лицензия</h2>
 - MIT
 <hr>

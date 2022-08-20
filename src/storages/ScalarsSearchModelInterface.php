@@ -2,11 +2,12 @@
 
 namespace Mnemesong\OrmCore\storages;
 
+use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsInterface;
 use Mnemesong\Scalarex\specification\ScalarSpecification;
 use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Structure\Structure;
 
-interface ScalarsSearchModelInterface
+interface ScalarsSearchModelInterface extends TableSchemaContainsInterface
 {
     /**
      * @param ScalarSpecification[] $scalars

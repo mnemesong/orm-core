@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea0f85d27756a2e6e78b8fea69257758",
+    "content-hash": "adaf6efb78fead44b86f2eb6513a5a3a",
     "packages": [
         {
             "name": "mnemesong/scalarex",
@@ -152,6 +152,56 @@
                 "source": "https://github.com/mnemesong/structure/tree/0.4.1"
             },
             "time": "2022-08-17T15:25:16+00:00"
+        },
+        {
+            "name": "mnemesong/table-schema",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mnemesong/table-schema.git",
+                "reference": "047b2f0135f9bd426a6d56cd4d70219513e395c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mnemesong/table-schema/zipball/047b2f0135f9bd426a6d56cd4d70219513e395c8",
+                "reference": "047b2f0135f9bd426a6d56cd4d70219513e395c8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4",
+                "webmozart/assert": "1.11.*"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "*",
+                "phpstan/phpstan": "*",
+                "phpstan/phpstan-webmozart-assert": "*",
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mnemesong\\TableSchema\\": "src/",
+                    "Mnemesong\\TableSchemaStubs\\": "stubs/",
+                    "Mnemesong\\TableSchemaTestUnit\\": "test-unit/",
+                    "Mnemesong\\TableSchemaTestHelpers\\": "test-helpers/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pantagruel74",
+                    "email": "tostar74@mail.ru"
+                }
+            ],
+            "description": "Package contains table-schema and column-schema classes and builder.",
+            "support": {
+                "issues": "https://github.com/mnemesong/table-schema/issues",
+                "source": "https://github.com/mnemesong/table-schema/tree/0.1.2"
+            },
+            "time": "2022-08-20T01:01:43+00:00"
         },
         {
             "name": "webmozart/assert",

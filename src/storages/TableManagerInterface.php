@@ -7,41 +7,42 @@ use Mnemesong\OrmCore\command\SaveCommand;
 use Mnemesong\OrmCore\command\UpdateCommand;
 use Mnemesong\OrmCore\query\RecordsQuery;
 use Mnemesong\OrmCore\query\ScalarsQuery;
+use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsInterface;
 use Mnemesong\Structure\Structure;
 
-interface TableManagerInterface
+interface TableManagerInterface extends TableSchemaContainsInterface
 {
     /**
      * @return RecordsQuery
      */
-    function getSelectRecordsQuery(): RecordsQuery;
+    public function selectRecordsQuery(): RecordsQuery;
 
     /**
      * @return ScalarsQuery
      */
-    function getSelectScalarsQuery(): ScalarsQuery;
+    public function selectScalarsQuery(): ScalarsQuery;
 
     /**
      * @param Structure $struct
      * @return UpdateCommand
      */
-    function getUpdateAllCommand(Structure $struct): UpdateCommand;
+    public function updateAllCommand(Structure $struct): UpdateCommand;
 
     /**
      * @param Structure $struct
      * @return SaveCommand
      */
-    function getSaveOneSmartCommand(Structure $struct): SaveCommand;
+    public function saveOneSmartCommand(Structure $struct): SaveCommand;
 
     /**
      * @param Structure $struct
      * @return SaveCommand
      */
-    function getInsertOneHardCommand(Structure $struct): SaveCommand;
+    public function insertOneHardCommand(Structure $struct): SaveCommand;
 
     /**
      * @return DeleteCommand
      */
-    function getDeleteAllCommand(): DeleteCommand;
+    public function deleteAllCommand(): DeleteCommand;
 
 }
