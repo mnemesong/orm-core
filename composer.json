@@ -8,7 +8,7 @@
         "mnemesong/spex": "0.7.*",
         "mnemesong/structure": "0.4.*",
         "mnemesong/scalarex": "0.2.*",
-        "mnemesong/table-schema": "0.1.*"
+        "mnemesong/table-schema": "0.3.*"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
