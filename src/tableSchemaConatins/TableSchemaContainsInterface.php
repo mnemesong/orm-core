@@ -2,7 +2,7 @@
 
 namespace Mnemesong\OrmCore\tableSchemaConatins;
 
-use Mnemesong\TableSchema\table\TableSchema;
+use Mnemesong\TableSchema\TableSchema;
 
 interface TableSchemaContainsInterface
 {

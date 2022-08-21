@@ -4,7 +4,7 @@ namespace Mnemesong\OrmCoreStubs\testHelpers;
 
 use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsInterface;
 use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsTrait;
-use Mnemesong\TableSchema\table\TableSchema;
+use Mnemesong\TableSchema\TableSchema;
 
 class TableSchemaContainsStub implements TableSchemaContainsInterface
 {

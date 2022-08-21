@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1572e4e28a2e405299b3a2ac54307dad",
+    "content-hash": "21618f663c39a2c1df92ddae403e0227",
     "packages": [
         {
             "name": "mnemesong/scalarex",
@@ -155,16 +155,16 @@
         },
         {
             "name": "mnemesong/table-schema",
-            "version": "0.4",
+            "version": "0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mnemesong/table-schema.git",
-                "reference": "901643e2d6131aa68341be4522042c58359ddace"
+                "reference": "db3a8d1ba9e2dcd1efeab59f68f2ebb1c7c54c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mnemesong/table-schema/zipball/901643e2d6131aa68341be4522042c58359ddace",
-                "reference": "901643e2d6131aa68341be4522042c58359ddace",
+                "url": "https://api.github.com/repos/mnemesong/table-schema/zipball/db3a8d1ba9e2dcd1efeab59f68f2ebb1c7c54c4d",
+                "reference": "db3a8d1ba9e2dcd1efeab59f68f2ebb1c7c54c4d",
                 "shasum": ""
             },
             "require": {
@@ -199,9 +199,9 @@
             "description": "Package contains table-schema and column-schema classes and builder.",
             "support": {
                 "issues": "https://github.com/mnemesong/table-schema/issues",
-                "source": "https://github.com/mnemesong/table-schema/tree/0.4"
+                "source": "https://github.com/mnemesong/table-schema/tree/0.5"
             },
-            "time": "2022-08-20T16:32:30+00:00"
+            "time": "2022-08-21T01:21:25+00:00"
         },
         {
             "name": "webmozart/assert",

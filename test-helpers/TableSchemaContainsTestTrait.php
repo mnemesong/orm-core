@@ -3,8 +3,8 @@
 namespace Mnemesong\OrmCoreTestHelpers;
 
 use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsInterface;
-use Mnemesong\TableSchema\columns\IntegerColumnSchema;
-use Mnemesong\TableSchema\table\TableSchema;
+use Mnemesong\TableSchema\ColumnSchema;
+use Mnemesong\TableSchema\TableSchema;
 use PHPUnit\Framework\TestCase;
 
 trait TableSchemaContainsTestTrait
@@ -30,12 +30,12 @@ trait TableSchemaContainsTestTrait
 
         $schema2 = $schema1->withTableSchema(
             (new TableSchema('table2'))
-                ->withColumn(new IntegerColumnSchema('id'))
+                ->withColumn(new ColumnSchema('id'))
         );
         $this->useTestCase()->assertEquals(new TableSchema('stub'), $schema1->getTableSchema());
         $this->useTestCase()->assertEquals(
             (new TableSchema('table2'))
-                ->withColumn(new IntegerColumnSchema('id')),
+                ->withColumn(new ColumnSchema('id')),
             $schema2->getTableSchema()
         );
     }
