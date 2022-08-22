@@ -2,10 +2,10 @@
 
 namespace Mnemesong\OrmCoreStubs\storages;
 
+use Mnemesong\Fit\conditions\abstracts\CondInterface;
 use Mnemesong\OrmCore\storages\ScalarsSearchModelInterface;
 use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsTrait;
 use Mnemesong\Scalarex\specification\ScalarSpecification;
-use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Structure\Structure;
 
 class ScalarsSearchModelStub implements ScalarsSearchModelInterface
@@ -15,7 +15,7 @@ class ScalarsSearchModelStub implements ScalarsSearchModelInterface
     /* @phpstan-ignore-next-line */
     public static array $lastScalars = [];
     public static string $lastMethodUsed = '';
-    public static ?SpecificationInterface $lastSpecificationUsed = null;
+    public static ?CondInterface $lastCondUsed = null;
 
     /**
      * @return void
@@ -24,17 +24,17 @@ class ScalarsSearchModelStub implements ScalarsSearchModelInterface
     {
         self::$lastScalars = [];
         self::$lastMethodUsed = '';
-        self::$lastSpecificationUsed = null;
+        self::$lastCondUsed = null;
     }
 
     /**
      * @param ScalarSpecification[] $scalars
-     * @param SpecificationInterface|null $spec
+     * @param CondInterface|null $spec
      * @return Structure
      */
-    public function findScalars(array $scalars, ?SpecificationInterface $spec): Structure
+    public function findScalars(array $scalars, ?CondInterface $spec): Structure
     {
-        self::$lastSpecificationUsed = $spec;
+        self::$lastCondUsed = $spec;
         self::$lastScalars = $scalars;
         self::$lastMethodUsed = 'findScalars';
         return new Structure([]);

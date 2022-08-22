@@ -2,9 +2,9 @@
 
 namespace Mnemesong\OrmCoreStubs\storages;
 
+use Mnemesong\Fit\conditions\abstracts\CondInterface;
 use Mnemesong\OrmCore\storages\RecordsUpdateModelInterface;
 use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsTrait;
-use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Structure\Structure;
 
 class RecordsUpdateModelStub implements RecordsUpdateModelInterface
@@ -12,7 +12,7 @@ class RecordsUpdateModelStub implements RecordsUpdateModelInterface
     use TableSchemaContainsTrait;
 
     public static ?Structure $lastUsedStructure = null;
-    public static ?SpecificationInterface $lastUsedSpecification = null;
+    public static ?CondInterface $lastUsedCond = null;
     public static ?int $lastUsedLimit = null;
     /* @phpstan-ignore-next-line  */
     public static ?array $lastUsedSortFields = null;
@@ -24,7 +24,7 @@ class RecordsUpdateModelStub implements RecordsUpdateModelInterface
     public static function clear(): void
     {
         self::$lastUsedStructure = null;
-        self::$lastUsedSpecification = null;
+        self::$lastUsedCond = null;
         self::$lastUsedLimit = null;
         self::$lastUsedSortFields = null;
         self::$lastUsedMethod = '';
@@ -32,15 +32,15 @@ class RecordsUpdateModelStub implements RecordsUpdateModelInterface
 
     /**
      * @param Structure $struct
-     * @param SpecificationInterface|null $spec
+     * @param CondInterface|null $cond
      * @param int $limit
      * @param string[] $sortFields
      * @return void
      */
-    public function updateRecords(Structure $struct, ?SpecificationInterface $spec, int $limit, array $sortFields): void
+    public function updateRecords(Structure $struct, ?CondInterface $cond, int $limit, array $sortFields): void
     {
         self::$lastUsedStructure = $struct;
-        self::$lastUsedSpecification = $spec;
+        self::$lastUsedCond = $cond;
         self::$lastUsedLimit = $limit;
         self::$lastUsedSortFields = $sortFields;
         self::$lastUsedMethod = 'updateRecords';

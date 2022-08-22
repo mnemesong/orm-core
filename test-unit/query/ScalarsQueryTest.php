@@ -2,35 +2,47 @@
 
 namespace Mnemesong\OrmCoreUnit\query;
 
+use Mnemesong\Fit\Fit;
+use Mnemesong\Fit\withCondition\WithCondInterface;
+use Mnemesong\FitTestHelpers\withCondition\WithCondTestTrait;
 use Mnemesong\OrmCore\query\ScalarsQuery;
 use Mnemesong\OrmCoreStubs\storages\ScalarsSearchModelStub;
 use Mnemesong\Scalarex\Scalar;
 use Mnemesong\Scalarex\specification\ScalarSpecification;
-use Mnemesong\Spex\Sp;
-use Mnemesong\Spex\specified\SpecifiedInterface;
-use Mnemesong\SpexUnitTest\specified\traits\SpecifiedTestTrait;
 use Mnemesong\Structure\Structure;
 use PHPUnit\Framework\TestCase;
 
 class ScalarsQueryTest extends TestCase
 {
-    use SpecifiedTestTrait;
+    use WithCondTestTrait;
 
-    protected function getInitializedSpecified(): SpecifiedInterface
+    /**
+     * @return WithCondInterface
+     */
+    protected function getInitWithCond(): WithCondInterface
     {
         return new ScalarsQuery(new ScalarsSearchModelStub());
     }
 
+    /**
+     * @return TestCase
+     */
     protected function useTestCase(): TestCase
     {
         return $this;
     }
 
+    /**
+     * @return ScalarsQuery
+     */
     protected function getQuery(): ScalarsQuery
     {
         return new ScalarsQuery(new ScalarsSearchModelStub());
     }
 
+    /**
+     * @return void
+     */
     public function testScalars(): void
     {
         $q1 = $this->getQuery();
@@ -49,16 +61,19 @@ class ScalarsQueryTest extends TestCase
         $this->assertEquals([Scalar::count('name')], $q4->getScalars());
     }
 
+    /**
+     * @return void
+     */
     public function testFind(): void
     {
         $q1 = $this->getQuery()
             ->withAddScalar(Scalar::avg('date'))
-            ->where(Sp::ex('s=', 'date', '2022-01-03'));
+            ->where(Fit::field('date')->val('=', '2022=01-03')->asStr());
         ScalarsSearchModelStub::clear();
         $res = $q1->find();
         $this->assertEquals(new Structure([]), $res);
         $this->assertEquals('findScalars', ScalarsSearchModelStub::$lastMethodUsed);
         $this->assertEquals([Scalar::avg('date')], ScalarsSearchModelStub::$lastScalars);
-        $this->assertEquals(Sp::ex('s=', 'date', '2022-01-03'), ScalarsSearchModelStub::$lastSpecificationUsed);
+        $this->assertEquals(Fit::field('date')->val('=', '2022=01-03')->asStr(), ScalarsSearchModelStub::$lastCondUsed);
     }
 }

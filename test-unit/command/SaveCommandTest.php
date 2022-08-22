@@ -11,8 +11,6 @@ use Mnemesong\OrmCoreStubs\storages\RecordsSaveModelStub;
 use Mnemesong\OrmCoreTestHelpers\AbleToRecordingTestTrait;
 use Mnemesong\OrmCoreTestHelpers\AbleToSortTestTrait;
 use Mnemesong\OrmCoreTestHelpers\LimitContainsTestTrait;
-use Mnemesong\Spex\specified\SpecifiedInterface;
-use Mnemesong\SpexUnitTest\specified\traits\SpecifiedTestTrait;
 use Mnemesong\Structure\Structure;
 use PHPUnit\Framework\TestCase;
 
@@ -20,26 +18,42 @@ class SaveCommandTest extends TestCase
 {
     use AbleToRecordingTestTrait;
 
+    /**
+     * @return Structure
+     */
     protected function getSavedStructure(): Structure
     {
         return new Structure(['name' => 'Sam', 'comment' => 'Some comment', 'age' => 18]);
     }
 
+    /**
+     * @return SaveCommand
+     */
     protected function getInitializedSaveCommand(): SaveCommand
     {
         return new SaveCommand(new RecordsSaveModelStub(), $this->getSavedStructure());
     }
 
+    /**
+     * @return TestCase
+     */
     protected function useTestCase(): TestCase
     {
         return $this;
     }
 
+    /**
+     * @param Structure $struct
+     * @return AbleToRecordingInterface
+     */
     protected function getAbleToRecordingWithStructure(Structure $struct): AbleToRecordingInterface
     {
         return new SaveCommand(new RecordsSaveModelStub(), $struct);
     }
 
+    /**
+     * @return void
+     */
     public function testBasics(): void
     {
         $com1 = $this->getInitializedSaveCommand();
@@ -56,6 +70,9 @@ class SaveCommandTest extends TestCase
         $this->assertEquals(true, $com2->isSmartUpdate());
     }
 
+    /**
+     * @return void
+     */
     public function testRun1(): void
     {
         RecordsSaveModelStub::clear();
@@ -65,6 +82,9 @@ class SaveCommandTest extends TestCase
         $this->assertEquals('createRecord', RecordsSaveModelStub::$lastUsedMethod);
     }
 
+    /**
+     * @return void
+     */
     public function testRun2(): void
     {
         RecordsSaveModelStub::clear();

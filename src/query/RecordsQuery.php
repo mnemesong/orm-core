@@ -2,20 +2,21 @@
 
 namespace Mnemesong\OrmCore\query;
 
+use Mnemesong\Fit\conditions\abstracts\CondInterface;
+use Mnemesong\Fit\withCondition\WithCondInterface;
+use Mnemesong\Fit\withCondition\WithCondTrait;
 use Mnemesong\OrmCore\ableToSort\AbleToSortInterface;
 use Mnemesong\OrmCore\ableToSort\AbleToSortTrait;
 use Mnemesong\OrmCore\limitContains\LimitContainsInterface;
 use Mnemesong\OrmCore\limitContains\LimitContainsTrait;
 use Mnemesong\OrmCore\storages\RecordsSearchModelInterface;
-use Mnemesong\Spex\specified\SpecifiedInterface;
-use Mnemesong\Spex\specified\SpecifiedTrait;
 use Mnemesong\Structure\collections\StructureCollection;
 use Mnemesong\Structure\Structure;
 use Webmozart\Assert\Assert;
 
-class RecordsQuery implements SpecifiedInterface, AbleToSortInterface, LimitContainsInterface
+class RecordsQuery implements WithCondInterface, AbleToSortInterface, LimitContainsInterface
 {
-    use SpecifiedTrait;
+    use WithCondTrait;
     use AbleToSortTrait;
     use LimitContainsTrait;
 
@@ -69,6 +70,6 @@ class RecordsQuery implements SpecifiedInterface, AbleToSortInterface, LimitCont
      */
     public function find(): StructureCollection
     {
-        return $this->searchModel->findRecords($this->selectFields, $this->sortFields, $this->specification, $this->limit);
+        return $this->searchModel->findRecords($this->selectFields, $this->sortFields, $this->cond, $this->limit);
     }
 }

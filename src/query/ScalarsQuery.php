@@ -2,16 +2,16 @@
 
 namespace Mnemesong\OrmCore\query;
 
+use Mnemesong\Fit\withCondition\WithCondInterface;
+use Mnemesong\Fit\withCondition\WithCondTrait;
 use Mnemesong\OrmCore\storages\ScalarsSearchModelInterface;
 use Mnemesong\Scalarex\specification\ScalarSpecification;
-use Mnemesong\Spex\specified\SpecifiedInterface;
-use Mnemesong\Spex\specified\SpecifiedTrait;
 use Mnemesong\Structure\Structure;
 use Webmozart\Assert\Assert;
 
-class ScalarsQuery implements SpecifiedInterface
+class ScalarsQuery implements WithCondInterface
 {
-    use SpecifiedTrait;
+    use WithCondTrait;
 
     /* @phpstan-ignore-next-line  */
     protected array $scalars;
@@ -70,7 +70,7 @@ class ScalarsQuery implements SpecifiedInterface
      */
     public function find(): Structure
     {
-        return $this->searchModel->findScalars($this->scalars, $this->specification);
+        return $this->searchModel->findScalars($this->scalars, $this->cond);
     }
 
 }

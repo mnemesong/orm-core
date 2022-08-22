@@ -2,12 +2,10 @@
 
 namespace Mnemesong\OrmCoreStubs\storages;
 
+use Mnemesong\Fit\conditions\abstracts\CondInterface;
 use Mnemesong\OrmCore\storages\RecordsSearchModelInterface;
 use Mnemesong\OrmCore\tableSchemaConatins\TableSchemaContainsTrait;
-use Mnemesong\Spex\specifications\SpecificationInterface;
 use Mnemesong\Structure\collections\StructureCollection;
-use Mnemesong\Structure\Structure;
-use Webmozart\Assert\Assert;
 
 final class RecordsSearchModelStub implements RecordsSearchModelInterface
 {
@@ -17,7 +15,7 @@ final class RecordsSearchModelStub implements RecordsSearchModelInterface
     public static array $lastSelectFields = [];
     /* @phpstan-ignore-next-line */
     public static array $lastSortFields = [];
-    public static ?SpecificationInterface $lastSpecificationUsed = null;
+    public static ?CondInterface $lastCondUsed = null;
     public static string $lastMethodUsed = '';
     public static ?int $lastUsedLimit = null;
 
@@ -29,27 +27,27 @@ final class RecordsSearchModelStub implements RecordsSearchModelInterface
         self::$lastMethodUsed = '';
         self::$lastSelectFields = [];
         self::$lastSortFields = [];
-        self::$lastSpecificationUsed = null;
+        self::$lastCondUsed = null;
         self::$lastUsedLimit = null;
     }
 
     /**
      * @param string[] $selectFields
      * @param string[] $sortFields
-     * @param SpecificationInterface|null $specification
+     * @param CondInterface|null $cond
      * @param int $limit
      * @return StructureCollection
      */
     public function findRecords(
-        array $selectFields,
-        array $sortFields,
-        ?SpecificationInterface $specification,
-        int $limit
+        array          $selectFields,
+        array          $sortFields,
+        ?CondInterface $cond,
+        int            $limit
     ): StructureCollection {
         self::$lastSelectFields = $selectFields;
         self::$lastSortFields = $sortFields;
         self::$lastMethodUsed = 'findAllRecords';
-        self::$lastSpecificationUsed = $specification;
+        self::$lastCondUsed = $cond;
         self::$lastUsedLimit = $limit;
         return new StructureCollection([]);
     }
