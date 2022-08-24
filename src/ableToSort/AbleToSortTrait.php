@@ -27,6 +27,7 @@ trait AbleToSortTrait
     protected function setSortFields(array $fields): void
     {
         Assert::allStringNotEmpty($fields, 'Fields list should be array of not empty strings');
+        Assert::allInArray($fields, ['asc', 'desc']);
         $this->sortFields = $fields;
     }
 

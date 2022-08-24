@@ -25,13 +25,13 @@ trait AbleToSortTestTrait
         $q1 = $this->getInitializedAbleToSort();
         $this->useTestCase()->assertEquals([], $q1->getSortFields());
 
-        $q2 = $q1->sortedBy(['name', 'date']);
+        $q2 = $q1->sortedBy(['name' => 'asc', 'date' => 'desc']);
         $this->useTestCase()->assertEquals([], $q1->getSortFields());
-        $this->useTestCase()->assertEquals(['name', 'date'], $q2->getSortFields());
+        $this->useTestCase()->assertEquals(['name' => 'asc', 'date' => 'desc'], $q2->getSortFields());
 
         $q3 = $q2->withoutSorting();
         $this->useTestCase()->assertEquals([], $q3->getSortFields());
-        $this->useTestCase()->assertEquals(['name', 'date'], $q2->getSortFields());
+        $this->useTestCase()->assertEquals(['name' => 'asc', 'date' => 'desc'], $q2->getSortFields());
     }
 
     /**
@@ -54,5 +54,16 @@ trait AbleToSortTestTrait
         $this->useTestCase()->expectException(\InvalidArgumentException::class);
         /* @phpstan-ignore-next-line */
         $q1->sortedBy([['data'], 'name']);
+    }
+
+    /**
+     * @return void
+     */
+    public function testSortingException3(): void
+    {
+        $q1 = $this->getInitializedAbleToSort();
+        $this->useTestCase()->expectException(\InvalidArgumentException::class);
+        /* @phpstan-ignore-next-line */
+        $q1->sortedBy(['name']);
     }
 }

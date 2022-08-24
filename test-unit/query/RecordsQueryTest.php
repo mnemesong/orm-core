@@ -85,13 +85,13 @@ class RecordsQueryTest extends TestCase
         RecordsSearchModelStub::clear();
         $q = self::getInitializedQuery()
             ->withOnlyFields(['name', 'age'])
-            ->sortedBy(['name', 'responsible'])
+            ->sortedBy(['name' => 'asc', 'responsible' => 'asc'])
             ->where(Fit::field('age')->val('>=', 18)->asNum());
         $res = $q->find();
         $this->assertEquals(new StructureCollection([]), $res);
         $this->assertEquals('findAllRecords', RecordsSearchModelStub::$lastMethodUsed);
         $this->assertEquals(['name', 'age'], RecordsSearchModelStub::$lastSelectFields);
-        $this->assertEquals(['name', 'responsible'], RecordsSearchModelStub::$lastSortFields);
+        $this->assertEquals(['name' => 'asc', 'responsible' => 'asc'], RecordsSearchModelStub::$lastSortFields);
         $this->assertEquals(Fit::field('age')->val('>=', 18)->asNum(), RecordsSearchModelStub::$lastCondUsed);
         $this->assertEquals(0, RecordsSearchModelStub::$lastUsedLimit);
     }
@@ -104,14 +104,14 @@ class RecordsQueryTest extends TestCase
         RecordsSearchModelStub::clear();
         $q = self::getInitializedQuery()
             ->withOnlyFields(['value', 'date'])
-            ->sortedBy(['subName', 'link'])
+            ->sortedBy(['subName' => 'desc', 'link' => 'asc'])
             ->where(Fit::field('date')->arr('in', ['2022-01-02']))
             ->withLimit(1);
         $res = $q->find();
         $this->assertEquals(new StructureCollection([]), $res);
         $this->assertEquals('findAllRecords', RecordsSearchModelStub::$lastMethodUsed);
         $this->assertEquals(['value', 'date'], RecordsSearchModelStub::$lastSelectFields);
-        $this->assertEquals(['subName', 'link'], RecordsSearchModelStub::$lastSortFields);
+        $this->assertEquals(['subName' => 'desc', 'link' => 'asc'], RecordsSearchModelStub::$lastSortFields);
         $this->assertEquals(Fit::field('date')->arr('in', ['2022-01-02']), RecordsSearchModelStub::$lastCondUsed);
         $this->assertEquals(1, RecordsSearchModelStub::$lastUsedLimit);
     }

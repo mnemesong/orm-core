@@ -81,10 +81,10 @@ class DeleteCommandTest extends TestCase
         $this->getDeleteCommand()
             ->withLimit(3)
             ->where(Fit::field('age')->val('=', 25))
-            ->sortedBy(['name', 'date'])
+            ->sortedBy(['name' => 'asc', 'date' => 'desc'])
             ->exec();
         $this->assertEquals(Fit::field('age')->val('=', 25), RecordsDeleteModelStub::$lastUsedCond);
-        $this->assertEquals(['name', 'date'], RecordsDeleteModelStub::$lastUsedSortFields);
+        $this->assertEquals(['name' => 'asc', 'date' => 'desc'], RecordsDeleteModelStub::$lastUsedSortFields);
         $this->assertEquals(3, RecordsDeleteModelStub::$lastUsedLimit);
         $this->assertEquals('deleteRecords', RecordsDeleteModelStub::$lastUsedMethod);
     }

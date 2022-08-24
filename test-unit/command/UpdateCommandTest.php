@@ -104,12 +104,12 @@ class UpdateCommandTest extends TestCase
         $this->getUpdateCommand($this->getTestStructure())
             ->where(Fit::field('date')->val('>', '2021-10-11'))
             ->withLimit(5)
-            ->sortedBy(['name', 'date'])
+            ->sortedBy(['name' => 'asc', 'date' => 'desc'])
             ->exec();
         $this->assertEquals($this->getTestStructure(), RecordsUpdateModelStub::$lastUsedStructure);
         $this->assertEquals(Fit::field('date')->val('>', '2021-10-11'), RecordsUpdateModelStub::$lastUsedCond);
         $this->assertEquals(5, RecordsUpdateModelStub::$lastUsedLimit);
-        $this->assertEquals(['name', 'date'], RecordsUpdateModelStub::$lastUsedSortFields);
+        $this->assertEquals(['name' => 'asc', 'date' => 'desc'], RecordsUpdateModelStub::$lastUsedSortFields);
         $this->assertEquals('updateRecords', RecordsUpdateModelStub::$lastUsedMethod);
     }
 }
